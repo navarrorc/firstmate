@@ -1,0 +1,11 @@
+skip: control: set FM_SUPERVISION_HOST_ATTENDED_LIVE_CONTROL_REF to a pre-fix ref to run the negative control
+# 13:00:22 positive step 1: primary idle (claude pid 2389639, 2.1.301 (Claude Code), model haiku); tracked Stop hook registered; config/supervision-host present; host pid 2409517 parked on watcher 2410513; listener runner 2411646; captain prompts so far: 1
+# 13:00:22 positive transcript: /home/hp/.claude/projects/-tmp-fm-sh-attended-live-kdXO1r-positive-fm/53773404-8e8c-4255-8bac-ee6174b35829.jsonl
+# 13:00:22 positive step 2: event 1 appended at 1792155622 (demo.status needs-decision)
+# 13:00:24 positive step 2: host log: 1792155624	pass-through	attended	main-only
+# 13:00:25 positive step 2: successor watcher pid 2417085 alive; ledger: epoch=1 owner_pid=2408789 outcome=arming updated_at=1792155620; marker: announced:downtime:2410513.1792155623.35LPWo
+# 13:00:33 positive step 2: rewake delivered at 1792155625 (Stop hook exited 2 with the banner); ledger: epoch=1 owner_pid=2408789 outcome=rewake updated_at=1792155625 session_pid=2389639 recovery_generation=2410513.1792155623.35LPWo
+# 13:00:33 positive step 2: primary turn ran: bin/fm-wake-drain.sh;bin/fm-wake-drain.sh --ack-through 4 --recovery-generation 2410513.1792155623.35LPWo;
+# 13:00:35 positive step 3: turn end re-armed: 1792155635	start	gen=host-2429263-1792155634; still following successor 2417085
+# 13:00:38 positive step 3: event 2 appended at 1792155638
+not ok - positive: the arm following successor 2417085 did not deliver its close on event 2: arm_pid=2430234	watcher_pid=2417085	origin=attached	started_at=1792155635	ended_at=1792155635	exit_code=unknown	signal=unknown	reason=taken-over	beacon_age=1	lock_before=pid:2417085|identity:linux-starttime=332845084 cmdline-hex=62617368002f746d702f666d2d73682d617474656e6465642d6c6976652e6b64584f31722f706f7369746976652f666d2f62696e2f666d2d77617463682e736800	lock_after=pid:none|identity:none	successor=started:2431439
